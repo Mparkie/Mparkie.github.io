@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mason Parkinson</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheet.css">
+    <script src="javascript.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="slide" style="background-image: url('./images/math_intro_background.jpg');">
+            <div class="content">
+                <h1>My Mathematical Journey</h1>
+                <h3><i>Mason P.</i></h3>
+                <h4>Scroll on text to navigate</h4>
+                
+            </div>
+            <div class="image-credit">Photo by <a href="https://www.freepik.com/free-photo/top-view-geometric-forms-with-copy-space_12227633.htm#fromView=search&page=1&position=43&uuid=96bb1b9d-c729-486b-bdd8-0a78bfa7be23&query=Mathematics+Background" target="_blank">Freepik</a></div>
+        </div>
+        <div class="slide" style="background-image: url('./images/math_blackboard_background.jpg');">
+            <div class="content">
+                <h2>Math in Early Life to Now</h2>
+                <div class="text-content">
+                    <p>When I first had my intro to mathematics, I thought it was just a tool to use. 
+                    Something that I had to learn to get through school. 
+                    I didn't enjoy math in my early years, as memorising basic actions, formulas and equations was tedious and boring. 
+                    Most of the time, I saw very minimal practical use. 
+                    Over time, I developed an interest in computer science and physics. 
+                    I became aware of the links between these two subjects and mathematics. 
+                    Math helped solve both difficulties and come up with solutions. 
+                    Because I was interested in physics and computer science, I did math and calculus in high school. 
+                    Over time, I started to enjoy math bit by bit as I saw the use cases and applications of math in my two favourite fields. 
+                    I could also connect mathematics to my hobbies, such as 3D animation and water polo, and the world around me.
+                    </p>
+                    
+                    <p>Math has now developed into the field of study that I enjoy, and I have begun to appreciate the interesting and cool phenomenon of mathematics.</p>
+
+                    <p>In this presentation, I will be going over some of the applications of math that I have encountered in my life and how they have shaped my understanding of the world around me.</p>
+                    <p>I will explore how math has shaped my life and continues to shape my understanding of the world and fascinate me.</p>
+                </div>
+            </div>
+            <div class="image-credit">Photo by <a href="https://www.freepik.com/free-photo/blackboard-inscribed-with-scientific-formulas-calculations_5896959.htm#fromView=keyword&page=1&position=0&uuid=ec84691c-4fb6-4a17-a5cc-d175b575bd5b&query=Mathematics+Background" target="_blank">Freepik</a></div>
+        </div>
+        <div class="slide split-slide" id="default_background">
+            <div class="content-half">
+                <div class="content">
+                    <h2>Water polo</h2>
+                    <div class="text-content">
+                        <p>Water polo is a sport that I have previously played competitively for many years. The sport is a combination of swimming, ball handling, and teamwork. It is very similar to soccer but in water. </p>
+                        <p>Water polo is a sport that requires a lot of practice, mental planning, team play, and, more importantly, math, from calculating angles to estimating distances.</p>
+                        <p>When playing I have to make sure I understand and are able to estimate the speed and trajectory of the ball using it's vectors to ensure that it goes into the goal.
+                        This requires a good understanding of both physics and mathematics.</p>
+                        <p>For example, when shooting the ball, I must calculate the angles and distances to the goal. This requires a good understanding of both trigonometry and geometry.</p>
+                        <p>This is especially important due to the interactions between the ball and the water. In the 3D-rendered image example, a shot with a spin bounces off the water and changes its direction rapidly.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="image-half" style="background-image: url('./images/waterpolo_render_crop.png');">
+                <div class="image-credit">Photo by Mason Parkinson</div>
+            </div>
+        </div>
+        <div class="slide code-slide" style="background-image: url('./images/code_background.jpg');">
+            <div class="content">
+                <h2>Coding</h2>
+                <h3>Example - Trigonometric Ratios</h3>
+                <p>One of the many applications of mathematics that I use during coding is trigonometry. In this example code I wrote, an image is dynamically resized based on the size of the window it is in, using trigonometric ratios.</p>
+                <p>See the comments in the code below for a more detailed explanation of how the code works.</p>
+                <div class="code-block" data-line-numbers="1">
+                    <code>
+def fill_image(event):                                                          # Function to fill the canvas with the image
+    global background_image
+    canvas_ratio = event.width / event.height                                   # Canvas ratio
+    if canvas_ratio > image_ratio:                                              # If canvas is wider than image
+        new_width = int(event.width)                                            # New width is canvas width
+        new_height = int(new_width/image_ratio)                                 # New height is calculated based on image ratio
+    else: # If canvas is taller than image
+        new_height = int(event.height)                                          # New height is canvas height
+        new_width = int(new_height*image_ratio)                                 # New width is calculated based on image ratio
+    resized_image = background_image_origin.resize((new_width, new_height))     # Resize the image
+    background_image = ImageTk.PhotoImage(resized_image)                        # Convert to PhotoImage
+    canvas.create_image(                                                        # Create image on canvas and center it.
+    int(event.width/2),
+    int(event.height/2),
+    image=background_image,
+    anchor='center')
+                    </code>
+                </div>
+                <p> Throughout my coding journey, I have encountered various applications of mathematics. Whether that is matrix addition, vectors, angles or even basic integration, I enjoyed learning how to apply mathematics and code to solve complex problems and applications. Mathematics has always been <i>integral</i> to my coding experience.</p>
+            </div>
+            <div class="image-credit">Photo by <a href="https://www.freepik.com/free-photo/computer-program-coding-screen_18415585.htm#fromView=keyword&page=1&position=0&uuid=6ddc6500-8e9e-4dc0-a60b-ac8e6297fdfc&query=Coding" target="_blank">Freepik</a></div>
+        </div>
+        <div class="slide video-slide" style="background-image: url('./images/animation_background2.png');">
+            <div class="content">
+                <h2>Animation</h2>
+                <div class="text-container">
+                    <p>
+                    One of the more interesting applications of mathematics I use is in 3D animation.<br>
+                    Using trigonometric functions, such as sine waves or quadratic functions, to create smooth and precise animations is an excellent example of how I use math when doing 3D animation and rendering.
+                    </p>
+                    <p>
+                    Furthermore, one of my favourite things to use math for is texturing.<br>
+                    Various noise functions (such as Perlin and Voronoi) are used with multiple mathematical functions (such as range and multiplication) to adjust and manipulate noise during the texturing process.<br>
+                    I can then use mathematical processes to map these textures to objects.
+                    </p>
+                    <p>
+                    Additionally, I use math to accurately position and rotate objects in 3D space, done using matrices and vectors;<br>
+                    by applying transformations such as translation, rotation, and scaling, I can create 3D models and animations that are visually appealing and realistic.
+                    </p>
+                    <p>
+                    I made an example animation about a game my friends and I played called REPO to show the math involved in the animation.
+                    </p>
+                    <h4>REPO Example Animation Mason P.</h4>
+                </div>
+                <div class="video-container">
+                    <iframe
+                        src="https://www.youtube.com/embed/2AeMn9V8ERo?si=-svvmLI_DO39k-He"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <div class="image-credit">Photo by Mason Parkinson</div>
+        </div>
+        <div class="slide" style="background-image: url('./images/animation_background2.png');">
+            <div class="content">
+                <h2>Animation Breakdown</h2>
+                <h3>Animation Data</h3>
+                <div class="text-container">
+                    <p>
+                        The following images show a few of the animation data's graphs, where x is the relative amount (rotation, displacement, scale), and y is the time in frames. 
+                        These functions are how I control and translate the actions of translation in my scene into a translation over time to precisely model and edit my animations, achieving the desired effect I want.
+                    </p>
+                </div>
+                <div class="image-container">
+                    <img src="./images/arm_rot_sine_wave.png" alt="Sine wave of Y rotation of arm bone">
+                    <div class="image-subtext">Image of Y rotation sine wave of an arm bone.</div>
+                </div>
+                <div class="image-container">
+                    <img src="./images/duck_jump_quadratic_ease.png" alt="duck's quadratic easing vetical (Z) position">
+                    <div class="image-subtext">Image of a quadratic outward easing on the duck's vertical (Z) position.</div>
+                </div>
+                <div class="image-container">
+                    <img src="./images/leg_y_rotation_quartic_ease.png" alt="duck's quadratic easing vetical(Z) position">
+                    <div class="image-subtext">Image of a quartic easing on the Y rotation of a leg bone.</div>
+                </div>
+                <h3>Animation Texturing</h3>
+                <div class="text-container">
+                    <p>The images below show a couple of textures of node setups and the function inside to create this outcome.</p>
+                    <p>These are the node setups I use to create the textures for the animation.</p>
+                </div>
+                <div class="image-container">
+                    <img src="./images/beam_texture.png" alt="Beam texture node setup">
+                    <div class="image-subtext">Image of the orange beam's textures node setup.</div>
+                </div>
+                <div class="image-container">
+                    <img src="./images/duck_texture.png" alt="Duck texture node setup">
+                    <div class="image-subtext">Image of the duck's texture node setup.</div>
+                </div>
+                <div class="image-container">
+                    <img src="./images/globe_texture.png" alt="Globe texture node setup">
+                    <div class="image-subtext">Image of the globe's texture node setup.</div>
+                </div>
+                <div class="text-container">
+                    <p>Multiple processes are happening in the images above.</p>
+                    <p>First I am taking the objects 3d faces coordinates and mapping them to a 2d space (<a href="https://en.wikipedia.org/wiki/UV_mapping">UV map</a>) so that the texture can be applied to it accurately.</p>
+                    <p>Then I am using a <a href="https://en.wikipedia.org/wiki/Perlin_noise">fractal perlin noise</a> function to create a base texture, and then using a variety of math functions to manipulate the noise to create the final texture.</p>
+                    <p>The math functions I use for this are either done though a standard mathmatical node that can run, an opperation function, a comparision, a rounding function, or a trigonometric function.
+                    I also commonly use a color ramp as a function for mapping values, where 0 is black and 1 is white.
+                    Using a coloramp makes visualing mathematical much easier and allows for easier modification of functions.
+                    It also also useful for mapping the mathmatical functions into visual elements for the texture.</p>
+                    <p>I don't always use a perlin noise function, I might use a type of graident function, a <a href="https://en.wikipedia.org/wiki/Voronoi_diagram">voronoi function</a>, or a bannded wave fuction(such as sine, cosine, or tangent).</p>
+                    <p>Additionally pre-made images can be used to make materials, as seen in the globe texture</p>
+                    <p>These functions together are used to create a variety of textures and materials, such as wood, stone, and metal.</p>
+                </div>
+            </div>
+        </div>
+        <div class="slide" id="default_background">
+            <div class="content">
+                <h2>Collision Blocks and &pi;</h2>
+                <div class="text-container">
+                    <p>One of my favorite mathematical phenomenon, that combines both my love of physics with mathematics, is the collisions of two blocks calculating the digits of &pi;.</p>
+                    <p>See the interactive demo below to understand how the number of collisions between two blocks— differing in mass by a factor of 100— reveals the digits of &pi;. The demo uses a simple physics engine to simulate the motion of the blocks and their interactions.</p>
+                </div>
+                <div class="demo-section">
+                    <div class="embed-container">
+                        <embed src="https://prajwalsouza.github.io/Experiments/Colliding-Blocks.html" title="Collisions and Pi">
+                    </div>
+                    <div class="embed-credit">
+                        Demo by <a href="https://prajwalsouza.github.io/" target="_blank">Prajwal DSouza</a>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <p>This natrually occuring phenomenon is a great example of how math and physics in nature create unusual and fascinating results.</p>
+                    <p> The blocks are set in motion, and as they collide, they transfer energy and momentum. The number of collisions between the two blocks is directly related to the digits of &pi;. 
+                    This is because the formula for energy $\frac{1}{2}mv^{2}$, or more the conservation of energy between the two block $\frac{1}{2}m_1v_1^{2} + \frac{1}{2}m_2v_2^{2}=constant$, forms a circle when graphed substuting in x and y.</p>
+                    <p><br>Mathmatical phenomenon like this captivates me and is one of the reasons why I now enjoy math.
+                </div>
+            </div>
+        </div>
+        <div class="slide" id="default_background">
+            <div class="content">
+                <h2>My thoughts</h2>
+                <p>Mathematics has been cruital in not only my educational experince but my life overall. Mathematics impacts me and plays a key role in my stuides, hobbies, and overall view of the world.</p>
+                <p>From the simple math of water-polo to the complex math of 3D animation, I have learned to appreciate mathematics. </p>
+                <p>Math for me has evolved from just a tool to use, to a way of thinking and understanding the world. It is a language that can be used to describe and explain the world around us. I have learned to appreciate the intricacies and complexity of mathematics, and how it can be used to solve problems and create solutions.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
