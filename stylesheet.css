@@ -163,6 +163,12 @@ a:hover {
     column-width: 35ch;
     column-gap: 4rem;
     column-fill: balance;
+    color: white;
+}
+
+.text-content p {
+    color: white;
+    margin-bottom: 1.5rem;
 }
 
 .split-slide {
@@ -379,9 +385,29 @@ a:hover {
     .code-block { font-size: 3vw; }
     .split-slide {
         grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        height: auto;
+    }
+    .split-slide .content-half {
+        min-height: auto;
+        flex: 0 1 auto;
+        order: 1;
+        padding-bottom: 2rem;
     }
     .split-slide .image-half {
-        height: 50vh;
+        height: 40vh;
+        min-height: 300px;
+        position: relative;
+        order: 2;
+        margin-top: 1rem;
+    }
+    .split-slide .content {
+        max-height: none;
+        height: auto;
+        overflow-y: visible;
+        padding-bottom: 2rem;
     }
     .text-content {
         column-width: auto;
